@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { Link } from 'react-router-dom';
 
 const Workshops = () => {
   const [ref, inView] = useInView({ threshold: 0.3, triggerOnce: true });
@@ -173,7 +174,12 @@ const Workshops = () => {
                     <span>{workshop.duration}</span>
                   </div>
                   <p className="text-light/80 mb-6 leading-relaxed">{workshop.description}</p>
-                  <button className="btn-primary w-full">Book Workshop</button>
+                  <Link 
+                    to="/membership" 
+                    className="btn-primary w-full block text-center"
+                  >
+                    Book Workshop
+                  </Link>
                 </div>
               </motion.div>
             ))}
